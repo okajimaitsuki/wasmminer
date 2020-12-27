@@ -13,12 +13,23 @@ go build
 
 ## run HTTP server
 
-* download caddy and install it
-* edit Caddyfile as you like
+```
+sudo apt install apache2
+```
+ and add these line to /etc/apache2/apache2.conf
+```
+<Directory /Path/to/wasmminer>
+   Options Indexes FollowSymLinks
+   AllowOverride ALL
+   Require all granted
+</Directory>
+```
+ and edit /etc/apache2/sites-available/000-default.conf line 12 like this
+```
+   DocumentRoot /Path/to/wasmminer
+```
 
-```
-caddy
-```
+
 
 ## build cpuminer/wasm and install
 
